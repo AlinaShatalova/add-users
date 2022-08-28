@@ -1,0 +1,18 @@
+.user-input {
+    width: 95%;
+    padding: 0.5rem;
+    border: 1px solid grey;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    outline: none;
+    font-size: 16px;
+}
+
+.add-button {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background-color: #2b6777;
+    color: white;
+    border: none;
+}
