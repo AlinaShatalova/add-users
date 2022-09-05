@@ -22,6 +22,7 @@ const NewUsers = ({ onAddUser }) => {
 
         if (!userName || !userAge) {
             setWarning(true);
+            return;
         }
 
         const newUser = {
@@ -36,9 +37,13 @@ const NewUsers = ({ onAddUser }) => {
         setUserAge('');
     };
 
+    const handleWarningClose = () => {
+        setWarning(false);
+    };
+
     return (
         <>
-            {warning && <Warning text='No empty fields' />}
+            {warning && <Warning text='No empty fields' onClose={handleWarningClose} />}
             <Card className={styles['add-user']}>
                 <form onSubmit={submitHandler} >
                     <label forhtml='username-input'>Username</label>
