@@ -1,9 +1,15 @@
 .button {
     width: auto;
-    background-color: #4f005f;
+    background-color: #303179;
     color: #fff;
     cursor: pointer;
     font: inherit;
-    border: 1px solid #4f005f;
+    border: 1px solid #303179;
     padding: 0.25rem 1rem;
+}
+
+.button:hover,
+.button:active {
+    background-color: #141850;
+    border-color: #141850;
 }

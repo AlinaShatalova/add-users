@@ -19,7 +19,12 @@
     font: inherit;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    background-color: #2b6777;
+    background-color: #ed7966;
     color: white;
     border: none;
+}
+
+.add-button:hover,
+.add-button:active {
+    background-color: #de6854;
 }

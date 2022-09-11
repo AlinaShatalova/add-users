@@ -3,13 +3,9 @@ import Button from './Button';
 import styles from './Warning.module.css';
 
 const Warning = (props) => {
-    const handleClose = () => {
-        props.onClose();
-    };
-
     return (
         <>
-            <div className={styles.backdrop} onClick={handleClose}></div>
+            <div className={styles.backdrop} onClick={props.onClose}></div>
             <Card className={styles.warning}>
                 <div className={styles['warning-title']}>
                     <h2>Invalid input</h2>
@@ -17,7 +13,7 @@ const Warning = (props) => {
                 <div className={styles['warning-content']}>
                     <p className={styles['warning-text']}>{props.text}</p>
                     <div className={styles['warning-close']}>
-                        <Button onClick={handleClose}>Okay</Button>
+                        <Button onClick={props.onClose}>Okay</Button>
                     </div>
                 </div>
             </Card>

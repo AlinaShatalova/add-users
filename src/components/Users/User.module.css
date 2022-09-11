@@ -2,7 +2,7 @@
     width: 95%;
     display: flex;
     justify-content: flex-start;
-    gap: 15px;
+    gap: 5px;
     padding: 0.5rem;
     border: 1px solid grey;
 }

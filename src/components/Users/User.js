@@ -4,7 +4,7 @@ const User = ({ name, age }) => {
     return (
         <li className={styles.user}>
             <div>{name}</div>
-            <div>{age}</div>
+            <div>({age} years old)</div>
         </li>
     )
 };

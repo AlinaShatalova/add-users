@@ -7,7 +7,8 @@ import styles from './NewUsers.module.css';
 const NewUsers = ({ onAddUser }) => {
     const [userName, setUserName] = useState('');
     const [userAge, setUserAge] = useState('');
-    const [warning, setWarning] = useState(false);
+    // const [warning, setWarning] = useState(false);
+    const [error, setError] = useState('');
 
     const userNameChangeHandler = ({ target }) => {
         setUserName(target.value);
@@ -20,8 +21,15 @@ const NewUsers = ({ onAddUser }) => {
     const submitHandler = (event) => {
         event.preventDefault();
 
-        if (!userName || !userAge) {
-            setWarning(true);
+        if (!userName.trim() || !userAge.trim()) {
+            // setWarning(true);
+            setError('Please enter a valid name and age (non-empty values)');
+            return;
+        }
+
+        if (+userAge < 0) {
+            // setWarning(true);
+            setError('Please enter a valid age (> 0)');
             return;
         }
 
@@ -38,25 +46,28 @@ const NewUsers = ({ onAddUser }) => {
     };
 
     const handleWarningClose = () => {
-        setWarning(false);
+        setError(null);
     };
 
     return (
         <>
-            {warning && <Warning text='No empty fields' onClose={handleWarningClose} />}
+            {error && <Warning
+                text={error}
+                onClose={handleWarningClose}
+            />}
             <Card className={styles['add-user']}>
                 <form onSubmit={submitHandler} >
-                    <label forhtml='username-input'>Username</label>
+                    <label htmlFor='username'>Username</label>
                     <input
-                        id='username-input'
+                        id='username'
                         className={styles['user-input']}
                         type='text'
                         value={userName}
                         onChange={userNameChangeHandler}
                     />
-                    <label forhtml='username-age'>Age (Years)</label>
+                    <label htmlFor='age'>Age (Years)</label>
                     <input
-                        id='username-age'
+                        id='age'
                         className={styles['user-input']}
                         type='number'
                         value={userAge}
