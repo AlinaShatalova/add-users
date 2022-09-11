@@ -5,4 +5,4 @@ technologies used in the project:
 - css modules;
 
 ## Demo
-https://alinashatalova.github.io/add-user/
+https://alinashatalova.github.io/add-users/
